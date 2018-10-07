@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "babel-preset-es2017": "^6.24.1",
     "electron-compile": "^6.4.3",
     "electron-devtools-installer": "^2.1.0",
@@ -57,8 +58,6 @@
     "react-hot-loader": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "babel-core": "^6.26.3",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-classes": "^6.24.1",

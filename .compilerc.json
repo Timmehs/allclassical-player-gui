@@ -7,7 +7,7 @@
           "react",
           "stage-1"
         ],
-        "plugins": ["transform-class-properties", "transform-async-to-generator",  "react-hot-loader/babel"],
+        "plugins": ["transform-async-to-generator",  "react-hot-loader/babel"],
         "sourceMaps": "inline"
       }
     },
@@ -18,7 +18,7 @@
           "react",
           "stage-1"
         ],
-        "plugins": ["transform-class-properties", "transform-async-to-generator"],
+        "plugins": ["transform-async-to-generator"],
         "sourceMaps": "none"
       }
     }

@@ -35,8 +35,8 @@ const createWindow = async () => {
 
 function initializeMainWindow () {
   mainWindow = new BrowserWindow({
-    width: 500,
-    height: 310,
+    width: 400,
+    height: 400,
     frame: false,
     show: true,
     fullScreenable: false,
@@ -47,7 +47,7 @@ function initializeMainWindow () {
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
-  mainWindow.on('blur', () => mainWindow.hide())
+  // mainWindow.on('blur', () => mainWindow.hide())
 
   mainWindow.on('closed', () => mainWindow = null)
 }

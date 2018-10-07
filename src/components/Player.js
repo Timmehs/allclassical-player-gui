@@ -56,8 +56,9 @@ class Player extends Component {
     if (this.state.titles[0] !== data.StreamTitle) {
       console.log('Song Change', data)
       this.songChangeNotification(data)
+      console.log('New title', data.StreamTitle);
       this.setState({
-        titles: [data.StreamTitle].concat(this.state.titles)
+        titles: [data.StreamTitle].concat(this.state.titles.slice(1))
       })
     }
   }
@@ -88,34 +89,31 @@ class Player extends Component {
 
     return <div className="uk-padding">
         <h3>AllClassical Portland 89.9 FM</h3>
+        <div style={{ width: "100%", height: "25px" }}>
+          <canvas width="100%" height="25px" id="visualizer"></canvas>
+        </div>
         <Segment>
-          <div className="uk-grid">
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <AudioWrapper src={currentStream} onPlay={this.onPlay} onPause={this.onStop} />
-            </div>
-            <div>
-              <small>Now Playing:</small>
-              <div>
-                <small>
-                  <strong>{titles[0] || " "}</strong>
-                </small>
-              </div>
-              {titles.length > 1 && <Fragment>
-                  <small>Previous:</small>
-                  <div>
-                    <small>
-                      <strong>{titles[0] || " "}</strong>
-                    </small>
-                  </div>
-                </Fragment>}
-            </div>
-          </div>
+          <AudioWrapper src={currentStream} onPlay={this.onPlay} onPause={this.onStop} />
         </Segment>
         <Segment>
           <select className="uk-select" value={currentStream} onChange={this.changeStream}>
             {streamOptions}
           </select>
         </Segment>
+        <small>Now Playing:</small>
+        <div>
+          <small>
+            <strong>{titles[0] || " "}</strong>
+          </small>
+        </div>
+        {titles.length > 1 && <Fragment>
+            <small>Previous:</small>
+            <div>
+              <small>
+                <strong>{titles[0] || " "}</strong>
+              </small>
+            </div>
+          </Fragment>}
       </div>;
   }
 }
