@@ -1,9 +1,5 @@
-import React from 'react';
+import React from 'react'
+import { render } from 'react-dom'
+import WrappedApp from './hot-wrapper'
 
-export default class App extends React.Component {
-  render() {
-    return (<div>
-      <h2>Welcome to React!</h2>
-    </div>);
-  }
-}
+render(<WrappedApp />, document.getElementById('main'))
