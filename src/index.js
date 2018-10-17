@@ -1,44 +1,50 @@
-import { app, BrowserWindow, Tray, nativeImage } from 'electron'
-import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
-import { enableLiveReload } from 'electron-compile'
+import { app, BrowserWindow, Tray, nativeImage } from "electron";
+import installExtension, {
+  REACT_DEVELOPER_TOOLS
+} from "electron-devtools-installer";
+import { enableLiveReload } from "electron-compile";
+
+import path from "path";
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow, tray
+let mainWindow, tray;
 
-const isDevMode = process.execPath.match(/[\\/]electron/)
+const isDevMode = process.execPath.match(/[\\/]electron/);
 
-if (isDevMode) enableLiveReload({ strategy: 'react-hmr' })
+if (isDevMode) enableLiveReload({ strategy: "react-hmr" });
 
 const createWindow = async () => {
   // Create the browser window.
-  initializeMainWindow()
+  initializeMainWindow();
 
   // Tray Icon
-  tray = new Tray(nativeImage.createFromPath("./src/images/tray.png"));
+  tray = new Tray(path.resolve(__dirname, "images", "acp_tray.png"));
   tray.on("click", () => toggleGui());
 
   // Open the DevTools.
   if (isDevMode) {
-    await installExtension(REACT_DEVELOPER_TOOLS)
-    mainWindow.webContents.openDevTools()
+    await installExtension(REACT_DEVELOPER_TOOLS);
+    mainWindow.webContents.openDevTools();
   }
 
+  showGui();
+
   // Emitted when the window is closed.
-  mainWindow.on('closed', () => {
+  mainWindow.on("closed", () => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    mainWindow = null
-  })
-}
+    mainWindow = null;
+  });
+};
 
-function initializeMainWindow () {
+function initializeMainWindow() {
   mainWindow = new BrowserWindow({
     width: 400,
     height: 400,
     frame: false,
-    show: true,
+    show: false,
     fullScreenable: false,
     resizeable: false,
     transparent: true,
@@ -49,7 +55,7 @@ function initializeMainWindow () {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
   // mainWindow.on('blur', () => mainWindow.hide())
 
-  mainWindow.on('closed', () => mainWindow = null)
+  mainWindow.on("closed", () => (mainWindow = null));
 }
 
 const toggleGui = () => {
@@ -58,7 +64,7 @@ const toggleGui = () => {
   } else {
     showGui();
   }
-}
+};
 
 const showGui = () => {
   const position = getWindowPosition();
@@ -85,21 +91,21 @@ const getWindowPosition = () => {
   };
 };
 
-app.on('ready', createWindow)
+app.on("ready", createWindow);
 
 // Quit when all windows are closed.
-app.on('window-all-closed', () => {
+app.on("window-all-closed", () => {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
+  if (process.platform !== "darwin") {
+    app.quit();
   }
-})
+});
 
-app.on('activate', () => {
+app.on("activate", () => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
-    createWindow()
+    createWindow();
   }
-})
+});

@@ -1,6 +1,7 @@
 import React, { Component, createRef } from "react";
 import PropTypes from "prop-types";
 import visualize from "../visualizer";
+import Segment from "./Segment";
 
 class AudioWrapper extends Component {
   constructor(props) {
@@ -50,13 +51,13 @@ class AudioWrapper extends Component {
         <div className="uk-grid uk-grid-small">
           <div className="uk-width-1-4@s">
             <button
-              className="uk-button uk-width-1-1 uk-button-default"
+              className="uk-button uk-button-default"
               onClick={this.playPause}
             >
               {btnText}
             </button>
           </div>
-          <div style={{ display: "flex" }} className="uk-width-3-4@s">
+          <div className="uk-width-3-4@s">
             <input
               className="uk-range"
               type="range"
