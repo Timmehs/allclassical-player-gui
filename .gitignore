@@ -1,4 +1,4 @@
 node_modules
 out
 .eslintcache
-.DS_Store
+*/**/.DS_Store

@@ -1,8 +1,8 @@
 {
   "name": "allclassical-player-gui",
-  "productName": "allclassical-player-gui",
+  "productName": "AllClassical Player",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Listen to AllClassical 89.9 FM on your mac",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -15,37 +15,7 @@
   "author": "timsandberg",
   "license": "MIT",
   "config": {
-    "forge": {
-      "make_targets": {
-        "win32": [
-          "squirrel"
-        ],
-        "darwin": [
-          "zip"
-        ],
-        "linux": [
-          "deb",
-          "rpm"
-        ]
-      },
-      "electronPackagerConfig": {
-        "packageManager": "yarn",
-        "icon": "./src/images/acp.icns"
-      },
-      "electronWinstallerConfig": {
-        "name": "allclassical_player_gui"
-      },
-      "electronInstallerDebian": {},
-      "electronInstallerRedhat": {},
-      "github_repository": {
-        "owner": "",
-        "name": ""
-      },
-      "windowsStoreConfig": {
-        "packageName": "",
-        "name": "allclassicalplayergui"
-      }
-    }
+    "forge": "./forge.config.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",

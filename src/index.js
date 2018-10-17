@@ -19,7 +19,7 @@ const createWindow = async () => {
   initializeMainWindow();
 
   // Tray Icon
-  tray = new Tray(path.resolve(__dirname, "images", "acp_tray.png"));
+  tray = new Tray(path.resolve(__dirname, "images", "acp_tray_Template.png"));
   tray.on("click", () => toggleGui());
 
   // Open the DevTools.
@@ -49,7 +49,8 @@ function initializeMainWindow() {
     resizeable: false,
     transparent: true,
     "node-integration": false,
-    backgroundThrottling: false
+    backgroundThrottling: false,
+    icon: path.join(__dirname, "images", "macos", "acp.icns")
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
