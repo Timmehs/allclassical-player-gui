@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import AudioWrapper from "./AudioWrapper";
 import Parser from "icecast-parser";
 import { nativeImage } from "electron";
-import Segment from "./segment";
+import Segment from "./Segment";
 
 const STREAMS = [
   { label: "ac96k AAC", value: "http://allclassical-ice.streamguys.com/ac96k" },
