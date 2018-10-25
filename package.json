@@ -1,47 +1,47 @@
 {
-  "name": "allclassical-player-gui",
-  "productName": "AllClassical Player",
-  "version": "1.0.0",
-  "description": "Listen to AllClassical 89.9 FM on your mac",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --cache --color --ext .jsx,.js src"
-  },
-  "keywords": [],
-  "author": "timsandberg",
-  "license": "MIT",
-  "config": {
-    "forge": "./forge.config.js"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.3.1",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-es2015-classes": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2017": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "electron-compile": "^6.4.3",
-    "electron-devtools-installer": "^2.1.0",
-    "electron-squirrel-startup": "^1.0.0",
-    "icecast-parser": "^3.0.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.0.0"
-  },
-  "devDependencies": {
-    "electron-forge": "^5.2.2",
-    "electron-prebuilt-compile": "3.0.0",
-    "eslint": "^5.7.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-class-property": "^1.1.0",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-jsx-a11y": "^5",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-react": "^7"
-  }
+	"name": "allclassical-player-gui",
+	"productName": "AllClassical Player",
+	"version": "1.0.0",
+	"description": "Listen to AllClassical 89.9 FM on your mac",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "NODE_ENV=development electron-forge start",
+		"package": "electron-forge package",
+		"make": "electron-forge make",
+		"publish": "electron-forge publish",
+		"lint": "eslint --cache --color --ext .jsx,.js src"
+	},
+	"keywords": [],
+	"author": "timsandberg",
+	"license": "MIT",
+	"config": {
+		"forge": "./forge.config.js"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.3.1",
+		"babel-plugin-transform-async-to-generator": "^6.24.1",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"babel-plugin-transform-es2015-classes": "^6.24.1",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-es2017": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"electron-compile": "^6.4.3",
+		"electron-devtools-installer": "^2.1.0",
+		"electron-squirrel-startup": "^1.0.0",
+		"icecast-parser": "^3.0.0",
+		"react": "^16.5.2",
+		"react-dom": "^16.5.2",
+		"react-hot-loader": "^4.0.0"
+	},
+	"devDependencies": {
+		"electron-forge": "^5.2.2",
+		"electron-prebuilt-compile": "3.0.0",
+		"eslint": "^5.7.0",
+		"eslint-config-standard": "^12.0.0",
+		"eslint-plugin-class-property": "^1.1.0",
+		"eslint-plugin-import": "^2",
+		"eslint-plugin-jsx-a11y": "^5",
+		"eslint-plugin-node": "^7.0.1",
+		"eslint-plugin-react": "^7"
+	}
 }

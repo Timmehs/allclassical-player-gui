@@ -1,6 +1,5 @@
 import React, { Component, createRef } from "react";
 import PropTypes from "prop-types";
-import visualize from "../visualizer";
 import Segment from "./Segment";
 
 class AudioWrapper extends Component {
@@ -24,7 +23,6 @@ class AudioWrapper extends Component {
     let playing;
 
     if (a.paused) {
-      this.visualize = this.visualize || visualize();
       a.play();
       playing = true;
     } else {
