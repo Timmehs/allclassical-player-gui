@@ -42,7 +42,7 @@ const createWindow = async () => {
 function initializeMainWindow() {
 	mainWindow = new BrowserWindow({
 		width: 400,
-		height: 400,
+		height: 350,
 		frame: false,
 		show: false,
 		fullScreenable: false,
@@ -56,7 +56,7 @@ function initializeMainWindow() {
 	mainWindow.loadURL(`file://${__dirname}/index.html`)
 
 	// Hide on blur
-	mainWindow.on("blur", () => mainWindow.hide())
+	mainWindow.on("blur", () => !isDevMode && mainWindow.hide())
 
 	mainWindow.on("closed", () => (mainWindow = null))
 }
@@ -81,7 +81,8 @@ const getWindowPosition = () => {
 	const trayBounds = tray.getBounds()
 
 	// Center gui horizontally below the tray icon
-	const x = Math.round(trayBounds.x + trayBounds.width / windowBounds.width)
+	const x = Math.round(trayBounds.x - (windowBounds.width - trayBounds.width))
+	console.table(trayBounds)
 
 	// Position window 4 pixels vertically below the tray icon
 	const y = Math.round(trayBounds.y + trayBounds.height)

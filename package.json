@@ -29,6 +29,7 @@
 		"electron-devtools-installer": "^2.1.0",
 		"electron-squirrel-startup": "^1.0.0",
 		"icecast-parser": "^3.0.0",
+		"prop-types": "^15.6.2",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2",
 		"react-hot-loader": "^4.0.0"

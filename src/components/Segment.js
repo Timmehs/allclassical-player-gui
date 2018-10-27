@@ -1,5 +1,7 @@
-import React from "react";
+import React from "react"
 
-const Segment = ({ children }) => <div className="uk-margin"> {children} </div>;
+const Segment = ({ children }) => (
+	<div className="uk-margin segment"> {children} </div>
+)
 
-export default Segment;
+export default Segment
