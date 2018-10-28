@@ -1,61 +1,61 @@
 html {
-	background: transparent;
-	overflow: visible;
-	font-size: 14px;
+  background: transparent;
+  overflow: visible;
+  font-size: 14px;
 }
 
 body {
-	background: transparent;
-	overflow: visible;
+  background: transparent;
+  overflow: visible;
 }
 
 #main {
-	background: white;
-	position: relative;
-	height: 350px;
-	/* margin: 15px; */
-	border-radius: 8px;
-	overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  height: 350px;
+  /* margin: 15px; */
+  overflow: hidden;
 }
 
 .uk-margin.segment {
-	margin-top: 35px;
+  margin-top: 35px;
 }
 
 .hidden {
-	opacity: 0;
-	transition: 1s ease-in-out;
+  opacity: 0;
+  transition: 1s ease-in-out;
 }
 
 .hidden.show {
-	opacity: 1;
+  opacity: 1;
 }
 
 #main .settings-btn {
-	opacity: 0.5;
-	transition: 0.2s ease-in;
-	position: absolute;
-	top: 26px;
-	right: 26px;
+  opacity: 0.5;
+  transition: 0.2s ease-in;
+  position: absolute;
+  top: 26px;
+  right: 26px;
 }
 
 #main .settings-btn:hover {
-	opacity: 1;
+  opacity: 1;
 }
 
 #main .player-settings {
-	position: absolute;
-	background: white;
-	top: 600px;
-	height: 350px;
-	width: 100%;
-	left: 0;
-	transition: 0.5s ease-in-out;
-	z-index: 100;
+  position: absolute;
+  background: #222;
+  color: whitesmoke;
+  top: 600px;
+  height: 350px;
+  width: 100%;
+  left: 0;
+  transition: 0.5s ease-in-out;
+  z-index: 100;
 }
 
 #main .player-settings.active {
-	top: 0;
+  top: 0;
 }
 
 /* 

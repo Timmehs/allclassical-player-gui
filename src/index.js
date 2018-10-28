@@ -1,8 +1,15 @@
-import { app, BrowserWindow, Tray, nativeImage } from "electron"
+import {
+	app,
+	BrowserWindow,
+	Tray,
+	nativeImage
+} from "electron"
 import installExtension, {
 	REACT_DEVELOPER_TOOLS
 } from "electron-devtools-installer"
-import { enableLiveReload } from "electron-compile"
+import {
+	enableLiveReload
+} from "electron-compile"
 
 import path from "path"
 
@@ -12,7 +19,9 @@ let mainWindow, tray
 
 const isDevMode = process.env.NODE_ENV == "development"
 
-if (isDevMode) enableLiveReload({ strategy: "react-hmr" })
+if (isDevMode) enableLiveReload({
+	strategy: "react-hmr"
+})
 
 const createWindow = async () => {
 	// Create the browser window.
@@ -81,8 +90,7 @@ const getWindowPosition = () => {
 	const trayBounds = tray.getBounds()
 
 	// Center gui horizontally below the tray icon
-	const x = Math.round(trayBounds.x - (windowBounds.width - trayBounds.width))
-	console.table(trayBounds)
+	const x = Math.round(trayBounds.x - windowBounds.width)
 
 	// Position window 4 pixels vertically below the tray icon
 	const y = Math.round(trayBounds.y + trayBounds.height)
